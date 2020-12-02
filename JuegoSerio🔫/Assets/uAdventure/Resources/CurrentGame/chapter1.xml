@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eAdventure version="2">
+  <player>
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <character id="GuiaJugador" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/GuiaJugadorAnim.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: PruebaConversacion</documentation>
+        <effect>
+          <trigger-conversation idTarget="PruebaConversacion" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4441291517855, -3.7255963683131)" zoom="18" start="yes">
+    <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="PuntoInteres" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="GuiaJugador" layer="0" scale="0.1471611" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4448432922363, -3.72735595703125)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions>
+          <enter-action>
+            <effect>
+              <speak-char idTarget="GuiaJugador">Esto es una prueba de dialogo</speak-char>
+              <condition />
+            </effect>
+            <only-from-outside>True</only-from-outside>
+          </enter-action>
+        </actions>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="TestItem" layer="0" scale="0.1148473" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4443550109863, -3.72721648216248)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+  </map-scene>
+  <geoelement id="FacultadMedicina">
+    <description>
+      <name>Facultad de Medicina</name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <description>
+      <name>test</name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40,4456611040104 -3,72300803661313 40,4426726931448 -3,72250378131836 40,442399157098 -3,72502505779236 40,4427665933221 -3,7251001596448 40,4426686105254 -3,7260228395459 40,4444975991808 -3,72638761997194 40,444583331803 -3,72558295726745 40,4453916625787 -3,72569024562802</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions>
+      <enter-action>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+      <exit-action>
+        <effect>
+          <speak-player>he salido</speak-player>
+          <condition />
+        </effect>
+        <only-from-inside>True</only-from-inside>
+      </exit-action>
+      <exit-action>
+        <effect>
+          <navigate navigation-type="Ordered">
+            <step locks="False">PuntoInteres</step>
+          </navigate>
+          <condition />
+        </effect>
+        <only-from-inside>True</only-from-inside>
+      </exit-action>
+    </actions>
+  </geoelement>
+  <geoelement id="PuntoInteres">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Point>
+          <pos>40,4439801392464 -3,72753828763992</pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <scene id="SceneId" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/special/EmptyBackground.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+  </scene>
+  <graph-conversation id="PruebaConversacion">
+    <dialogue-node nodeindex="0" editor-x="187" editor-y="55">
+      <speak-char idTarget="GuiaJugador">
+        <resources name="No name" />
+        <text>Hola</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola 1</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="611" editor-y="38" x="611" y="38">
+      <speak-player>
+        <text>1</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>2</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="831" editor-y="38">
+      <speak-player>
+        <resources name="No name" />
+        <text>Pretaste 1</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="831" editor-y="229">
+      <speak-player>
+        <resources name="No name" />
+        <text>Pretaste 2</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/1PAiTuL.jpg" />
+      <asset type="icon" uri="assets/icon/1534522432321.jpg" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <remove-element idTarget="TestItem" />
+          <condition />
+          <generate-object idTarget="TestItem" />
+          <condition />
+        </effect>
+      </grab>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <speak-player>Mmmmm rico...</speak-player>
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+</eAdventure>
