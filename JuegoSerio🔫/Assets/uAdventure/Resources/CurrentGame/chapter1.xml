@@ -71,7 +71,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4441291517855, -3.7255963683131)" zoom="18" start="yes">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4431115614999, -3.72812300920467)" zoom="17" start="yes">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -109,6 +109,15 @@
         <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions />
       </ext-elem-ref>
+    </map-element>
+    <map-element targetId="EscuelaArquitectura" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="FacultadFilosofia" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="CasaDeVelazquez" layer="0" scale="1" orientation="2">
+      <condition />
     </map-element>
   </map-scene>
   <geoelement id="FacultadMedicina">
@@ -159,6 +168,50 @@
       </exit-action>
     </actions>
   </geoelement>
+  <geoelement id="EscuelaArquitectura">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40,4405250231203 -3,73069932111019 40,4408623579721 -3,7305769453239 40,4410705768391 -3,73181076147073 40,440645972976 -3,73199315168377 40,4397171426757 -3,73203338481897 40,4396069070189 -3,73086394168847 40,4395701617598 -3,73040796615594 40,4399621101547 -3,73037577964775</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="FacultadFilosofia">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40,4492453145097 -3,72963053497206 40,448441112349 -3,7294588735951 40,4482533277175 -3,73135787757765 40,4490616143565 -3,73148125919234 40,4490759021642 -3,73133641990553 40,449255520059 -3,73135787757765 40,449406562008 -3,72979683193099 40,4492432733996 -3,72976464542282</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
   <geoelement id="PuntoInteres">
     <description>
       <name>
@@ -170,8 +223,31 @@
     </description>
     <geometries>
       <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40,4416244724775 -3,73004883527792 40,4412754021816 -3,72960090637243 40,4408916268988 -3,72978866100347 40,4409834882032 -3,73030632734336 40,4412325337746 -3,7314489483837 40,4420327395297 -3,73091250658073</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="CasaDeVelazquez">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
         <Point>
-          <pos>40,4439801392464 -3,72753828763992</pos>
+          <pos>
+          </pos>
         </Point>
       </geometry>
     </geometries>
