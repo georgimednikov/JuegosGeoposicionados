@@ -71,7 +71,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4431115614999, -3.72812300920467)" zoom="17" start="yes">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4433156908202, -3.72371345758419)" zoom="16" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -103,7 +103,7 @@
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
         <param name="Position">(40.4443550109863, -3.72721648216248)</param>
         <param name="Rotation">0</param>
-        <param name="InteractionRange">25</param>
+        <param name="InteractionRange">25.4</param>
         <param name="RevealOnlyOnRange">True</param>
         <param name="Hint">False</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
@@ -146,27 +146,7 @@
         </Polygon>
       </geometry>
     </geometries>
-    <actions>
-      <enter-action>
-        <only-from-outside>True</only-from-outside>
-      </enter-action>
-      <exit-action>
-        <effect>
-          <speak-player>he salido</speak-player>
-          <condition />
-        </effect>
-        <only-from-inside>True</only-from-inside>
-      </exit-action>
-      <exit-action>
-        <effect>
-          <navigate navigation-type="Ordered">
-            <step locks="False">PuntoInteres</step>
-          </navigate>
-          <condition />
-        </effect>
-        <only-from-inside>True</only-from-inside>
-      </exit-action>
-    </actions>
+    <actions />
   </geoelement>
   <geoelement id="EscuelaArquitectura">
     <description>
@@ -253,15 +233,118 @@
     </geometries>
     <actions />
   </geoelement>
-  <scene id="SceneId" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+  <scene id="InitialScene1" hideInventory="no" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
     <documentation>
     </documentation>
     <resources name="No name">
-      <asset type="background" uri="assets/special/EmptyBackground.png" />
+      <asset type="background" uri="assets/background/FondoInicio1.jpg" />
     </resources>
     <name>
     </name>
     <default-initial-position x="400" y="450" />
+    <active-areas>
+      <active-area id="TriggerDialogoInicial" rectangular="yes" x="1" y="-1" width="1078" height="608" hasInfluenceArea="no" behaviour="normal">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no">
+            <effect>
+              <trigger-conversation idTarget="ConversacionInicial" />
+              <condition />
+            </effect>
+          </examine>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <scene id="InitialScene2" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/FondoInicio2.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="MapaFrente" x="324" y="287" scale="0.3817941" layer="0" hasInfluenceArea="no" />
+      <object-ref idTarget="ImagenPabellonFilosofia" x="360" y="457" scale="0.4391662" layer="2" hasInfluenceArea="no" />
+      <object-ref idTarget="ImagenEstatuaVelazquez" x="657" y="234" scale="0.4302026" layer="4" hasInfluenceArea="no" />
+      <object-ref idTarget="ImagenEscuelaArquitectura" x="790" y="377" scale="0.479534" layer="3" hasInfluenceArea="no" />
+      <object-ref idTarget="ImagenFacultadMedicina" x="686" y="506" scale="0.2481309" layer="1" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="EscenaMapaFrente" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/MapaFrente.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="BackArrow" x="537" y="440" scale="0.1006896" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="EscenaPabellonFilosofia" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/PabellonFilosofia.jpg" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="BackArrow" x="511" y="344" scale="0.0956567" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="EscenaEstatuaVelazquez" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/EstatuaVelazquez.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="BackArrow" x="452" y="360" scale="0.1138697" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="EscenaEscuelaArquitectura" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/EscuelaArquitectura.jpg" />
+      <asset type="foreground" uri="" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="BackArrow" x="457" y="372" scale="0.1441839" layer="0" hasInfluenceArea="no" />
+    </objects>
+  </scene>
+  <scene id="EscenaFacultadMedicina" hideInventory="no" start="no" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="background" uri="assets/background/FacultadMedicina.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="450" />
+    <objects>
+      <object-ref idTarget="BackArrow" x="906" y="656" scale="0.2374621" layer="0" hasInfluenceArea="no" />
+    </objects>
   </scene>
   <graph-conversation id="PruebaConversacion">
     <dialogue-node nodeindex="0" editor-x="187" editor-y="55">
@@ -308,6 +391,182 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="Conversacion_FacultadInformatica">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name">
+          <asset type="image" uri="" />
+        </resources>
+        <text>#O </text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversacionInicial">
+    <option-node nodeindex="0" preListening="yes" editor-x="73" editor-y="108" x="73" y="108">
+      <speak-player>
+        <text>Hacer la introducción</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+      <speak-player>
+        <text>Saltarse la introducción</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+    </option-node>
+    <dialogue-node nodeindex="1" editor-x="384" editor-y="101">
+      <speak-player>
+        <resources name="No name" />
+        <text>Al fin has llegado...</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Hoy no es un día normal en la Universidad Complutense. Hoy has venido con un objetivo muy distinto al de otros días.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Al rebuscar entre las cosas de tu difunto abuelo, has encontrado un libro bastante peculiar.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Tu abuelo, al igual que múchos jóvenes en su época, participó en la Guerra Civil.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>En su caso le tocó pelear en el frente de la Ciudad Universitaria. No es que sepa demasiado del tema, pero he venido aquí para intentar aprender más sobre ello.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>En este libro escribió su experiencia sobre el conflicto. Sin embargo, el paso de los años no le ha sentado nada bien.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Las páginas son frágiles y han tomado un color amarillento. Es prácticamente ilegible.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name">
+          <asset type="image" uri="" />
+        </resources>
+        <text>Sin embargo, hay 5 fotografías escondidas entre las páginas que se han conservado sorprendentemente bien.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <effect>
+        <trigger-scene idTarget="InitialScene2" x="537" y="450" transitionTime="100" transitionType="5" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="350" editor-y="556">
+      <end-conversation>
+        <effect>
+          <generate-object idTarget="MapaFrente" />
+          <condition />
+          <generate-object idTarget="ImagenEstatuaVelazquez" />
+          <condition />
+          <generate-object idTarget="ImagenPabellonFilosofia" />
+          <condition />
+          <generate-object idTarget="ImagenEscuelaArquitectura" />
+          <condition />
+          <generate-object idTarget="ImagenFacultadMedicina" />
+          <condition />
+          <activate flag="IntroductionFinished" />
+          <condition />
+          <trigger-scene idTarget="MapaJugable" x="539" y="455" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="616" editor-y="86">
+      <speak-player>
+        <resources name="No name" />
+        <text>Primero, una foto del frente de la Ciudad Universitaria.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+      <effect>
+        <generate-object idTarget="MapaFrente" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="886" editor-y="87">
+      <speak-player>
+        <resources name="No name" />
+        <text>Después, una fotografía de lo que parece un pabellón lleno de escombros.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+      <effect>
+        <generate-object idTarget="ImagenPabellonFilosofia" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="601" editor-y="372">
+      <speak-player>
+        <resources name="No name" />
+        <text>En esta imágen se ve una estatua de un caballo al borde de caerse al suelo.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="6" />
+      <effect>
+        <generate-object idTarget="ImagenEstatuaVelazquez" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="858" editor-y="370">
+      <speak-player>
+        <resources name="No name" />
+        <text>En esta, se aprecia una vista aérea de un edificio...</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="7" />
+      <effect>
+        <generate-object idTarget="ImagenEscuelaArquitectura" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="7" editor-x="1133" editor-y="370">
+      <speak-player>
+        <resources name="No name" />
+        <text>Y por último, una foto de unos edificios tomada desde el otro lado de la calle.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="8" />
+      <effect>
+        <generate-object idTarget="ImagenFacultadMedicina" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="8" editor-x="1368" editor-y="370">
+      <speak-player>
+        <resources name="No name" />
+        <text>Mi objetivo es localizar estos escenarios en la Ciudad Universitaria.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Me he guardado las fotografías en la mochila, si quiero verlas más de cerca solo tendré que rebuscar dentro.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="MapaJugable" x="285" y="345" transitionTime="1000" transitionType="5" />
+          <condition />
+          <activate flag="IntroductionFinished" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/1PAiTuL.jpg" />
@@ -322,20 +581,158 @@
       </detailed>
     </description>
     <actions>
-      <grab needsGoTo="yes" keepDistance="35" not-effects="no">
-        <effect>
-          <remove-element idTarget="TestItem" />
-          <condition />
-          <generate-object idTarget="TestItem" />
-          <condition />
-        </effect>
-      </grab>
       <use needsGoTo="yes" keepDistance="35" not-effects="no">
         <effect>
           <speak-player>Mmmmm rico...</speak-player>
           <condition />
         </effect>
       </use>
+    </actions>
+  </object>
+  <object id="MapaFrente" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/MapaFrente.png" />
+      <asset type="icon" uri="assets/icon/MapaFrente.png" />
+      <asset type="imageover" uri="" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <active flag="IntroductionFinished" />
+        </condition>
+        <effect>
+          <trigger-scene idTarget="EscenaMapaFrente" x="285" y="345" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="BackArrow" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/BackArrow.png" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Vuelve a la escena anterior</documentation>
+        <effect>
+          <trigger-scene idTarget="MapaJugable" x="539" y="455" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </use>
+    </actions>
+  </object>
+  <object id="ImagenEstatuaVelazquez" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/EstatuaVelazquez.png" />
+      <asset type="icon" uri="assets/icon/EstatuaVelazquez.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <active flag="IntroductionFinished" />
+        </condition>
+        <effect>
+          <trigger-scene idTarget="EscenaEstatuaVelazquez" x="250" y="273" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="ImagenPabellonFilosofia" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/PabellonFilosofia.jpg" />
+      <asset type="icon" uri="assets/icon/PabellonFilosofia.jpg" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <active flag="IntroductionFinished" />
+        </condition>
+        <effect>
+          <trigger-scene idTarget="EscenaPabellonFilosofia" x="309" y="261" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="ImagenEscuelaArquitectura" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/EscuelaArquitectura.jpg" />
+      <asset type="icon" uri="assets/special/EmptyIcon.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-scene idTarget="EscenaEscuelaArquitectura" x="250" y="281" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="ImagenFacultadMedicina" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/FacultadMedicina.png" />
+      <asset type="icon" uri="assets/icon/FacultadMedicina.png" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <condition>
+          <active flag="IntroductionFinished" />
+        </condition>
+        <effect>
+          <trigger-scene idTarget="EscenaFacultadMedicina" x="490" y="499" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
     </actions>
   </object>
 </eAdventure>
