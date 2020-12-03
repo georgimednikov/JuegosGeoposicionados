@@ -71,7 +71,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4427890471498, -3.72713327407812)" zoom="18" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4435626977074, -3.72688651084894)" zoom="17" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -243,7 +243,7 @@
     </name>
     <default-initial-position x="400" y="450" />
     <active-areas>
-      <active-area id="TriggerDialogoInicial" rectangular="yes" x="1" y="-1" width="1078" height="608" hasInfluenceArea="no" behaviour="normal">
+      <active-area id="TriggerDialogoInicial" rectangular="yes" x="1" y="-2" width="1078" height="608" hasInfluenceArea="no" behaviour="first-action">
         <description>
           <name>
           </name>
@@ -615,7 +615,7 @@
       </examine>
     </actions>
   </object>
-  <object id="BackArrow" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+  <object id="BackArrow" returnsWhenDragged="yes" behaviour="first-action" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/BackArrow.png" />
       <asset type="icon" uri="assets/special/EmptyIcon.png" />
