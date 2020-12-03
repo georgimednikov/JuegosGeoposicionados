@@ -71,22 +71,18 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4435626977074, -3.72688651084894)" zoom="17" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
     <map-element targetId="PuntoInteres" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
-    <map-element targetId="GuiaJugador" layer="0" scale="0.1900057" orientation="0">
+    <map-element targetId="GuiaJugador" layer="0" scale="0.2174702" orientation="0">
       <condition />
-      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.4449844360352, -3.72737193107605)</param>
+      <ext-elem-ref transformManager="uAdventure.Geo.ScreenDescriptor">
+        <param name="Position">(35.02824, 752.9675)</param>
         <param name="Rotation">0</param>
-        <param name="InteractionRange">25</param>
-        <param name="RevealOnlyOnRange">True</param>
-        <param name="Hint">False</param>
-        <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions>
           <enter-action>
             <effect>
@@ -98,13 +94,13 @@
         </actions>
       </ext-elem-ref>
     </map-element>
-    <map-element targetId="TestItem" layer="0" scale="0.1148473" orientation="2">
+    <map-element targetId="TestItem" layer="0" scale="0.1804139" orientation="2">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.4443588256836, -3.72721910476685)</param>
-        <param name="Rotation">0</param>
-        <param name="InteractionRange">25.4</param>
-        <param name="RevealOnlyOnRange">False</param>
+        <param name="Position">(40.4443359375, -3.72730493545532)</param>
+        <param name="Rotation">180</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
         <param name="Hint">False</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions />
@@ -117,6 +113,9 @@
       <condition />
     </map-element>
     <map-element targetId="CasaDeVelazquez" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="StartingPosition" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
   </map-scene>
@@ -140,7 +139,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4425951233963 -3,7266236543653 40,4424971404658 -3,72756779193852 40,442946228098 -3,72764289379095 40,4430809538339 -3,72669875621773</posList>
+              <posList>40,4425951233963 -3,7266236543653 40,4424971404658 -3,72756779193852 40,442946228098 -3,72764289379095 40,4430401278284 -3,7266987562181</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -206,7 +205,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4416244724775 -3,73004883527792 40,4412754021816 -3,72960090637243 40,4408916268988 -3,72978866100347 40,4409834882032 -3,73030632734336 40,4412325337746 -3,7314489483837 40,4420327395297 -3,73091250658073</posList>
+              <posList>40,4416244724775 -3,73004883527792 40,4412754021816 -3,72960090637243 40,4408916268988 -3,72978866100347 40,4409834882032 -3,73030632734336 40,4412325337746 -3,7314489483837 40,4420654008042 -3,73105198144956</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -228,6 +227,24 @@
         <Point>
           <pos>
           </pos>
+        </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="StartingPosition">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Point>
+          <pos>40,4437987940793 -3,72606228822173</pos>
         </Point>
       </geometry>
     </geometries>
