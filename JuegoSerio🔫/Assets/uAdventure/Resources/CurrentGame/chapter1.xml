@@ -71,7 +71,47 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
+  <character id="RiosCapape" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/UpCapape.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Arquitectura</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Arquitectura" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4427686341471, -3.72713327407812)" zoom="18" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -582,6 +622,78 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Arquitectura">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>¡Alto!, ¿quién te envía?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Usted es...?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Rios Capapé, y esto es el puesto de mando de la escuela de Arquitectura.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Ahora, ¿qué ocurre?, ¿otra vez han atacado la pasarela de la muerte o estas aqui para relevar a los soldados?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" keepShowing="yes" editor-x="704" editor-y="219" x="704" y="219">
+      <speak-player>
+        <text>¿Pasarela de la Muerte?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>La guerra ya acabó.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="MuertoCapape" />
+      </condition>
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="1180" editor-y="195">
+      <speak-player>
+        <resources name="No name" />
+        <text>
+        </text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="97" editor-y="703">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>¿Qué?, ¿Cuándo?, ¿Hemos ganado?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Mas o menos, la cosa es que usted está muerto.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Entiendo, eso explica un par de cosas</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="MuertoCapape" />
+        <condition />
+      </effect>
     </dialogue-node>
   </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
