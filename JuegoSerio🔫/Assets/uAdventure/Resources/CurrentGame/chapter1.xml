@@ -101,8 +101,17 @@
       </detailed>
     </description>
     <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: ConversacionSoldadoMedicina</documentation>
+        <effect>
+          <trigger-conversation idTarget="ConversacionSoldadoMedicina" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4423705780971, -3.7275463342671)" zoom="18" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4425175528903, -3.72670948505441)" zoom="18" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -149,6 +158,18 @@
     <map-element targetId="StartingPosition" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
+    <map-element targetId="SoldadoMedicina" layer="0" scale="0.1194849" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4422149658203, -3.72693490982056)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25.66</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
   </map-scene>
   <geoelement id="FacultadMedicina">
     <description>
@@ -170,13 +191,23 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4425951233963 -3,7266236543653 40,4424971404658 -3,72756779193852 40,442946228098 -3,72764289379095 40,4430401278284 -3,7266987562181</posList>
+              <posList>40,4421378691751 -3,72654318809486 40,4420398862446 -3,72748732566808 40,4424889738768 -3,72756242752051 40,4425828736072 -3,72661828994766</posList>
             </LinearRing>
           </exterior>
         </Polygon>
       </geometry>
     </geometries>
-    <actions />
+    <actions>
+      <enter-action>
+        <effect>
+          <speak-char idTarget="SoldadoMedicina">¡Eh tú! ¿Pero qué haces allí al descubierto? ¿Es que quieres morir?</speak-char>
+          <condition />
+          <trigger-scene idTarget="EscenaSoldadoMedicina" x="640" y="540" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+        <only-from-outside>True</only-from-outside>
+      </enter-action>
+    </actions>
   </geoelement>
   <geoelement id="EscuelaArquitectura">
     <description>
@@ -626,6 +657,140 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversacionSoldadoMedicina">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Pero qué haces caminando en tierra de nadie? ¿No sabes que te pueden disparar?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Este debe de ser un soldado perdido...</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola, gracias por la ayuda, pero la guerra ya acabó.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>#! ¿Qué?</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Ah si, es verdad... A veces me cuesta recordar.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No pasa nada. ¿Por qué estás aquí?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Esta posición fue clave durante el frente madrileño. Tras cruzar el Manzanares en Noviembre del 36, los Sublevados tomaron varios edificios del campus, incluida la Escuela de Agronomos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Sin embargo, los Republicanos consiguieron mantener la facultad de Odontología.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Separados por poco más de 80 metros durante los 4 años que se mantuvo el frente. Ya te puedes imaginar el horror que tuvo lugar aquí.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Ambos bandos hicieron de las ruinas sus laberintos de trincheras y refugios. Ambos edificios tuvieron que ser totalmente reconstruidos tras la guerra. Menudo desastre.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="705" editor-y="61" x="705" y="61">
+      <speak-player>
+        <text>¿Por qué se mantuvo el frente de esta manera?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿Cual es tu historia?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="1127" editor-y="0">
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Los sublevados no tenían los recursos necesarios para tomar Madrid.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Las tropas de Franco llegaron cansadas, pero de igual modo intentaron tomar la capital.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Entre sus múltiples intentos, intentaron avanzar por la Ciudad Universitaria. </text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Ante la imposibilidad de tomar la capital, Franco detuvo el avance y desvió sus tropas a Toledo.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Sin embargo, el frente de la Ciudad Universitaria se mantuvo inmovil. Se convirtió en un símbolo de la lucha en Madrid.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Para los republicanos, se convirtió en el símbolo del "No Pasarán", y para los sublevados, el de "No nos echarán".</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>
+        </text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1084" editor-y="248">
+      <speak-player>
+        <resources name="No name" />
+        <text>
+        </text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1063" editor-y="471">
+      <speak-player>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/FacultadMedicina.png" />
+        </resources>
+        <text>
+        </text>
+      </speak-player>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
