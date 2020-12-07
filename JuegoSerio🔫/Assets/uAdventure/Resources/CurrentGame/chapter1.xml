@@ -71,10 +71,127 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
-    <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
-      <condition />
-    </map-element>
+  <character id="PasajeroCInformacion" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/PasajeroCInformacionAnim.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="ConversationCInformatica" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="ChicaFilosofia" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/ChicaFiloAnim.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/ChicaFiloAnim.eaa.xml" />
+      <asset type="standright" uri="assets/animation/ChicaFiloAnim.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/ChicaFiloAnim.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="EntrandoFilosofia" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="ConversationFilosofia" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="ChicoMates" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/ChicoMatesAnim.eaa.xml" />
+      <asset type="standdown" uri="assets/animation/ChicoMatesAnim.eaa.xml" />
+      <asset type="standright" uri="assets/animation/ChicoMatesAnim.eaa.xml" />
+      <asset type="standleft" uri="assets/animation/ChicoMatesAnim.eaa.xml" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="ConversacionMatematica" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="404364545764484 -374027609825133 185015955099104 219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
     <map-element targetId="PuntoInteres" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -109,14 +226,53 @@
     <map-element targetId="EscuelaArquitectura" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
-    <map-element targetId="FacultadFilosofia" layer="0" scale="1" orientation="2">
+    <map-element targetId="StartingPosition" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
     <map-element targetId="CasaDeVelazquez" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
-    <map-element targetId="StartingPosition" layer="0" scale="1" orientation="2">
+    <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
+    </map-element>
+    <map-element targetId="FacultadFilosofia" layer="0" scale="1" orientation="2">
+      <condition />
+    </map-element>
+    <map-element targetId="PasajeroCInformacion" layer="0" scale="4" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4407089240549, -3.73015612363872)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="ChicoMates" layer="0" scale="4" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4407089240549, -3.73015612363872)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="ChicaFilosofia" layer="0" scale="4" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4407089240549, -3.73015612363872)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
     </map-element>
   </map-scene>
   <geoelement id="FacultadMedicina">
@@ -139,7 +295,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4425951233963 -3,7266236543653 40,4424971404658 -3,72756779193852 40,442946228098 -3,72764289379095 40,4430401278284 -3,7266987562181</posList>
+              <posList>404425951233963 -37266236543653 404424971404658 -372756779193852 40442946228098 -372764289379095 404430401278284 -37266987562181</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -161,29 +317,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4405250231203 -3,73069932111019 40,4408623579721 -3,7305769453239 40,4410705768391 -3,73181076147073 40,440645972976 -3,73199315168377 40,4397171426757 -3,73203338481897 40,4396069070189 -3,73086394168847 40,4395701617598 -3,73040796615594 40,4399621101547 -3,73037577964775</posList>
-            </LinearRing>
-          </exterior>
-        </Polygon>
-      </geometry>
-    </geometries>
-    <actions />
-  </geoelement>
-  <geoelement id="FacultadFilosofia">
-    <description>
-      <name>
-      </name>
-      <brief>
-      </brief>
-      <detailed>
-      </detailed>
-    </description>
-    <geometries>
-      <geometry influence="0">
-        <Polygon>
-          <exterior>
-            <LinearRing>
-              <posList>40,4492453145097 -3,72963053497206 40,448441112349 -3,7294588735951 40,4482533277175 -3,73135787757765 40,4490616143565 -3,73148125919234 40,4490759021642 -3,73133641990553 40,449255520059 -3,73135787757765 40,449406562008 -3,72979683193099 40,4492432733996 -3,72976464542282</posList>
+              <posList>50.5784182982908 -331140525013848 44.6632561333938 -331140525013848 44.6632561333938 -331140525013857 50.5784182982908 -331140525013857</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -202,13 +336,9 @@
     </description>
     <geometries>
       <geometry influence="0">
-        <Polygon>
-          <exterior>
-            <LinearRing>
-              <posList>40,4416244724775 -3,73004883527792 40,4412754021816 -3,72960090637243 40,4408916268988 -3,72978866100347 40,4409834882032 -3,73030632734336 40,4412325337746 -3,7314489483837 40,4420654008042 -3,73105198144956</posList>
-            </LinearRing>
-          </exterior>
-        </Polygon>
+        <Point>
+          <pos>19.7504550178314 -317065693438085</pos>
+        </Point>
       </geometry>
     </geometries>
     <actions />
@@ -244,8 +374,51 @@
     <geometries>
       <geometry influence="0">
         <Point>
-          <pos>40,4437987940793 -3,72606228822173</pos>
+          <pos>404437987940793 -372606228822173</pos>
         </Point>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="FacultadFilosofia">
+    <description>
+      <name>Facultad de Filosofía y filología</name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="20">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40.4490826513225 -3.72973917223115 40.4485621649915 -3.72964797712466 40.4483927509862 -3.73121170498023 40.4489111974469 -3.73131362892289</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
+      </geometry>
+    </geometries>
+    <actions />
+  </geoelement>
+  <geoelement id="FacultadMates">
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <geometries>
+      <geometry influence="0">
+        <Polygon>
+          <exterior>
+            <LinearRing>
+              <posList>40.449054 -3.7319317 40.4502584 -3.7319317 40.4502584 -3.7295811 40.449054 -3.7295811</posList>
+            </LinearRing>
+          </exterior>
+        </Polygon>
       </geometry>
     </geometries>
     <actions />
@@ -584,6 +757,228 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
+  <graph-conversation id="ConversationCInformatica">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola...... hooolaaa!</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="PasajeroCInformacion">
+        <resources name="No name" />
+        <text>Ho..la, disculpe, llevo mucho tiempo sin hablar con gente</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>eeee, ¿cómo te llamas? ,¿ porque estás aquí?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="PasajeroCInformacion">
+        <resources name="No name" />
+        <text>Me llamo Javier , soy un estudiantes de Filosofia de 35-36. Participó en la guerra civil, y murio en este frente de fuego.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="PasajeroCInformacion">
+        <resources name="No name" />
+        <text>Después de la guerra, se han producido muchos cambios. Antes aquí era un espacio abierto, y un arroyo del río manzanares. Después de la reconstrucción se convirtió en facultad de ciencia de la información.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="PasajeroCInformacion">
+        <resources name="No name" />
+        <text>Sabes, he estado aprendiendo en él. Creo que puedo trabajar en El País.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Vengo a buscar a mi abuelo. Él estaba involucrado en la guerra civil. La Ciudad Universitaria encontró el diario de mi abuelo, y con el puedo verte. Quiero preguntarte si sabes dónde está mi abuelo.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="PasajeroCInformacion">
+        <resources name="No name" />
+        <text>Emmm. Puedes seguir adelante. En año 36, me recuerdo que solo existe la facultad de letra y de ciencias,están al otro lado de la calle. Vete a ver</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Gracias.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-cutscene idTarget="PistaFacultadCInformacion" />
+          <condition />
+          <generate-object idTarget="PistaLetraCiencia" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversationFilosofia">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="53">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola, es aquí la facultad de Letra en el año 36.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Si, aquí es.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Gracias, y cómo te llamas, por qué estás aquí?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Soy el estudiante de esta facultad, bueno ,también soy la miliciana de esta zona.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Miliciana?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Los mujeres que se levantaron para defender la República. Y defender nosotros mismos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Bueno, todo se acabó, y tú, ¿por qué estás aquí, por qué puedes vernos?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Vengo a recoger el diario de mi abuelo, y con este diario os veo.</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Quería preguntar si este foto es de esta facultad.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="ChequearFilosofia" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="1" editor-x="529" editor-y="86">
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Que foto?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="2" />
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="507" editor-y="399">
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Si , es el Aula Magna, después del bombardeo.</text>
+      </speak-char>
+      <condition>
+        <active flag="usadoFilosofia" />
+      </condition>
+      <child nodeindex="3" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1019" editor-y="80">
+      <speak-player>
+        <resources name="No name" />
+        <text>Me puedes contar un poco de su historia.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>Esta facultad se inaugura el año 1933,  el proyecto universitario, contaba con las Facultades de Ciencias, Medicina, Farmacia, y la propia Filosofía.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="ChicaFilosofia">
+        <resources name="No name" />
+        <text>El noviembre de 1936, estalló la batalla. La irrupción de los sublevados por la Casa de Campo desembocó en un duro enfrentamiento en las inmediaciones del Hospital Clínico, lo que se tradujo en una gran ofensiva que hizo temblar los cimientos del bando republicano. Como la Facultad de Medicina, el edificio de Filosofía y Letras fue uno de los puntos clave donde los republicanos establecieron su base de operaciones, está rodeada de extensas trincheras</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversacionMatematica">
+    <dialogue-node nodeindex="0" editor-x="52" editor-y="47">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Hola</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Te quería pregunta una cosa</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Me estás hablando? a mi?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Si te estoy hablando.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Oh my god, como puedes verme, estamos en dos mundo diferente, ahora mismo soy una energía como la luz, no puedes percibir con los ojos........</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Emmm. Te veo porque tengo este diario.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Diario, dejame investigar un momento, es diario actua como un agujero negro que abre la conección entre dos mundo.....</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Una pregunta, esta foto es este edificio?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Qué foto?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Estas 4 fotos, pienso que si descubro los lugares correspondiente, voy a poder encontrar a mi abuelo.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>No, ninguno lo es. Vete a la facultad de enfrente, ahí puede ser.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="ChicoMates">
+        <resources name="No name" />
+        <text>Pero puedes regalarme este diario, creo que tiene una energía muy  potente, incluso puede .........</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Muchas gracias, voy a la facultad de enfrente, adios.</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
     <resources name="No name">
       <asset type="image" uri="assets/image/1PAiTuL.jpg" />
@@ -703,6 +1098,17 @@
           <condition />
         </effect>
       </examine>
+      <use needsGoTo="yes" keepDistance="35" not-effects="no">
+        <condition>
+          <active flag="ChequearFilosofia" />
+        </condition>
+        <effect>
+          <activate flag="usadoFilosofia" />
+          <condition />
+          <trigger-scene idTarget="EscenaPabellonFilosofia" x="309" y="261" transitionTime="0" transitionType="0" />
+          <condition />
+        </effect>
+      </use>
     </actions>
   </object>
   <object id="ImagenEscuelaArquitectura" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
@@ -752,4 +1158,27 @@
       </examine>
     </actions>
   </object>
+  <object id="PistaLetraCiencia" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/pista1.PNG" />
+      <asset type="icon" uri="assets/icon/pista1.PNG" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+  </object>
+  <slidescene id="PistaFacultadCInformacion" start="no" next="go-back" class="accesible" type="cutscene">
+    <documentation>
+    </documentation>
+    <resources name="No name">
+      <asset type="slides" uri="assets/animation/PistaCInformacion.eaa.xml" />
+    </resources>
+    <name>
+    </name>
+  </slidescene>
 </eAdventure>

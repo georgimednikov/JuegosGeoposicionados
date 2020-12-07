@@ -3,8 +3,7 @@
   <title>Adventure title</title>
   <description>
   </description>
-  <application-identifier>
-  </application-identifier>
+  <application-identifier>com.DefaultCompany.JuegoSerio</application-identifier>
   <configuration keepShowing="no" keyboard-navigation="disabled" defaultClickAction="showDetails" perspective="regular" dragBehaviour="considerNonTargets" show-save-load="yes" show-reset="yes" autosave="no" save-on-suspend="no" restore-after-open="no">
     <gui type="contextual" inventoryPosition="icon" inventoryImage="assets/special/DefaultInventory.png" inventoryX="756.029" inventoryY="598.1928" inventoryScale="0.1776638" />
     <mode playerTransparent="yes" />
