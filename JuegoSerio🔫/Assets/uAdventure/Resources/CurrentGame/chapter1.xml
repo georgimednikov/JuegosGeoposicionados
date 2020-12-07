@@ -111,7 +111,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4427686341471, -3.72713327407812)" zoom="18" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4403782214831, -3.7296813726423)" zoom="19" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -158,6 +158,26 @@
     <map-element targetId="StartingPosition" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
+    <map-element targetId="RiosCapape" layer="0" scale="0.3805234" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.440013885498, -3.73116993904114)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">100</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions>
+          <enter-action>
+            <effect>
+              <trigger-conversation idTarget="Conversacion_Arquitectura" />
+              <condition />
+            </effect>
+            <only-from-outside>True</only-from-outside>
+          </enter-action>
+        </actions>
+      </ext-elem-ref>
+    </map-element>
   </map-scene>
   <geoelement id="FacultadMedicina">
     <description>
@@ -201,7 +221,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4405250231203 -3,73069932111019 40,4408623579721 -3,7305769453239 40,4410705768391 -3,73181076147073 40,440645972976 -3,73199315168377 40,4397171426757 -3,73203338481897 40,4396069070189 -3,73086394168847 40,4395701617598 -3,73040796615594 40,4399621101547 -3,73037577964775</posList>
+              <posList>40,440574016062 -3,73075296523877 40,4409235988455 -3,73109192940302 40,4410664940722 -3,73182149030681 40,4406418902091 -3,73200388051985 40,4397130599088 -3,73204411365505 40,4395824102695 -3,73042405935832 40,4399171996048 -3,73039455505916 40,4399580273339 -3,73082102629253</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -648,7 +668,7 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <option-node nodeindex="1" keepShowing="yes" editor-x="704" editor-y="219" x="704" y="219">
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="562" editor-y="125" x="562" y="125">
       <speak-player>
         <text>¿Pasarela de la Muerte?</text>
         <resources name="No name" />
@@ -664,16 +684,20 @@
       </condition>
       <child nodeindex="3" />
     </option-node>
-    <dialogue-node nodeindex="2" editor-x="1180" editor-y="195">
-      <speak-player>
+    <dialogue-node nodeindex="2" editor-x="1027" editor-y="101">
+      <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>
-        </text>
-      </speak-player>
+        <text>La pasarela que nos une con el Puente de los Franceses, la usamos para aprovisionarnos.</text>
+      </speak-char>
       <condition />
-      <end-conversation />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Pero basta de chachara. Ve a la biblioteca y trae libros, después si quieres te puedes ir al hogar del combatiente a descansar.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="4" />
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="97" editor-y="703">
+    <dialogue-node nodeindex="3" editor-x="671" editor-y="578">
       <speak-char idTarget="RiosCapape">
         <resources name="No name" />
         <text>¿Qué?, ¿Cuándo?, ¿Hemos ganado?</text>
@@ -686,7 +710,7 @@
       <condition />
       <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>Entiendo, eso explica un par de cosas</text>
+        <text>Entiendo, eso explica un par de cosas.</text>
       </speak-char>
       <condition />
       <child nodeindex="1" />
@@ -694,6 +718,52 @@
         <activate flag="MuertoCapape" />
         <condition />
       </effect>
+    </dialogue-node>
+    <option-node nodeindex="4" preListening="yes" editor-x="1777" editor-y="334" x="1777" y="334">
+      <speak-player>
+        <text>¿Libros?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+      <speak-player>
+        <text>¿Hogar del combatiente?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="6" />
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EscuelaArquitectura.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="7" />
+    </option-node>
+    <dialogue-node nodeindex="5" editor-x="1940" editor-y="25">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Si, los usamos para las barricadas. Una pena que se echen a perder, pero la situacion lo requiere.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="2140" editor-y="322">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Si, el bar que tenemos aqui. Los soldados en relevos descansan ahi.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="7" editor-x="1955" editor-y="803">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Claro, si es este lugar, mira, ahi abajo a la derecha se ve la pasarela de la muerte y todo.</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
