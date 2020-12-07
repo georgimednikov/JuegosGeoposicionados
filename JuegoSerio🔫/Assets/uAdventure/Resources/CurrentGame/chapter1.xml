@@ -111,7 +111,47 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4425175528903, -3.72671484947245)" zoom="18" start="no">
+  <character id="NinyoMedicina" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/AnimNinyoMedicina.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: ConversacionNinyoMedicina</documentation>
+        <effect>
+          <trigger-conversation idTarget="ConversacionNinyoMedicina" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4438750132195, -3.72601479291963)" zoom="19" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -166,6 +206,18 @@
         <param name="InteractionRange">25.34</param>
         <param name="RevealOnlyOnRange">True</param>
         <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="NinyoMedicina" layer="0" scale="0.2177" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4440231323242, -3.72673106193542)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">True</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions />
       </ext-elem-ref>
@@ -754,7 +806,7 @@
         <condition />
       </effect>
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="705" editor-y="61" x="705" y="61">
+    <option-node nodeindex="1" preListening="yes" editor-x="609" editor-y="66" x="609" y="66">
       <speak-player>
         <text>¿Por qué se mantuvo el frente de esta manera?</text>
         <resources name="No name" />
@@ -773,6 +825,16 @@
       </speak-player>
       <condition />
       <child nodeindex="4" />
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/FacultadMedicina.png" />
+        </resources>
+      </speak-player>
+      <condition>
+        <inactive flag="FotoAgronomosEnsenyada" />
+      </condition>
+      <child nodeindex="5" />
     </option-node>
     <dialogue-node nodeindex="2" editor-x="1155" editor-y="0">
       <speak-char idTarget="SoldadoMedicina">
@@ -862,6 +924,178 @@
           <condition />
         </effect>
       </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="860" editor-y="954">
+      <speak-player>
+        <resources name="No name" />
+        <text>Mira, he encontrado esta foto en el diario de mi abuelo. ¿Te suena?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name">
+          <asset type="image" uri="" />
+        </resources>
+        <text>¡Anda! Justo como lo recordada.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Esta foto es de aquí mismo. Está sacada desde allí mismo, desde agrónomos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Oye, esta foto la sacó tu abuelo?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No lo sé...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Pues la tomó desde el lado sublevado... ¡¿No será un franquista?!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Eso he venido a averiguar. No sé náda sobre lo que hizo aquí.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Bueno, espero que lo consigas averiguar. ¡Mucha suerte!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Tienes alguna pregunta más?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="FotoAgronomosEnsenyada" />
+        <condition />
+      </effect>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversacionNinyoMedicina">
+    <dialogue-node nodeindex="0" editor-x="59" editor-y="53">
+      <speak-player>
+        <resources name="No name" />
+        <text>Disculpa. ¿Tienes un momento?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Anda! ¿Estás vivo?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Pues si...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Curioso... Rompes la monotonía. Aquí todo el mundo está chiflado.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¿Necesitas algo?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="643" editor-y="62" x="643" y="62">
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EstatuaVelazquez.png" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿Y esta?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/PabellonFilosofia.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>No, gracias.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="980" editor-y="14">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Si claro, estamos aquí mism... Oh espera...</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Que va, la estatua de la foto no es la de esta plaza.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>No recuerdo exáctamente el nombre del edificio...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¿Hogar Goya... Villa Picasso... Casa...?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Supongo que será algo de un pintor...</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Debería mirar el mapa, seguro que encuentro algo.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="974" editor-y="358">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>A ver a ver...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Madre mia, menudo destrozo!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Esto saca pinta de ser un pabellón de una facultad.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Lo siento, no puedo decirte nada más sobre el tema.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="960" editor-y="621">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Nos vemos!</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
     </dialogue-node>
   </graph-conversation>
   <object id="TestItem" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
