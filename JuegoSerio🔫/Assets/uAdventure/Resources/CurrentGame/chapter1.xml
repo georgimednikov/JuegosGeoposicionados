@@ -104,8 +104,21 @@
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Created with target conversation: Conversacion_Arquitectura</documentation>
+        <condition>
+          <inactive flag="FinCapape" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="Conversacion_Arquitectura" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Arquitectura_Fin</documentation>
+        <condition>
+          <active flag="FinCapape" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Arquitectura_Fin" />
           <condition />
         </effect>
       </talk-to>
@@ -762,6 +775,21 @@
         <resources name="No name" />
         <text>Claro, si es este lugar, mira, ahi abajo a la derecha se ve la pasarela de la muerte y todo.</text>
       </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="FinCapape" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Arquitectura_Fin">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Ahora mismo estoy ocupado.</text>
+      </speak-player>
       <condition />
       <end-conversation />
     </dialogue-node>
