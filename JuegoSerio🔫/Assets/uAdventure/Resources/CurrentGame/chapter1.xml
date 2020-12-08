@@ -191,7 +191,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="404364545764484 -374027609825133 185015955099104 219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
     <map-element targetId="PuntoInteres" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -295,7 +295,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>404425951233963 -37266236543653 404424971404658 -372756779193852 40442946228098 -372764289379095 404430401278284 -37266987562181</posList>
+              <posList>40,4425951233963 -3,7266236543653 40,4424971404658 -3,72756779193852 40,442946228098 -3,72764289379095 40,4430401278284 -3,7266987562181</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -317,7 +317,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>50.5784182982908 -331140525013848 44.6632561333938 -331140525013848 44.6632561333938 -331140525013857 50.5784182982908 -331140525013857</posList>
+              <posList>40,4405250231203 -3,73069932111019 40,4408623579721 -3,7305769453239 40,4410705768391 -3,73181076147073 40,440645972976 -3,73199315168377 40,4397171426757 -3,73203338481897 40,4396069070189 -3,73086394168847 40,4395701617598 -3,73040796615594 40,4399621101547 -3,73037577964775</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -337,7 +337,7 @@
     <geometries>
       <geometry influence="0">
         <Point>
-          <pos>19.7504550178314 -317065693438085</pos>
+          <pos>40,4437987940793 -3,72606228822173</pos>
         </Point>
       </geometry>
     </geometries>
@@ -374,7 +374,7 @@
     <geometries>
       <geometry influence="0">
         <Point>
-          <pos>404437987940793 -372606228822173</pos>
+          <pos>40,4437987940793 -3,72606228822173</pos>
         </Point>
       </geometry>
     </geometries>
@@ -393,7 +393,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40.4490826513225 -3.72973917223115 40.4485621649915 -3.72964797712466 40.4483927509862 -3.73121170498023 40.4489111974469 -3.73131362892289</posList>
+              <posList>40,4490826513225 -3,72973917223115 40,4485621649915 -3,72964797712466 40,4483927509862 -3,73121170498023 40,4489111974469 -3,73131362892289</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -415,7 +415,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40.449054 -3.7319317 40.4502584 -3.7319317 40.4502584 -3.7295811 40.449054 -3.7295811</posList>
+              <posList>40,449054 -3,7319317 40,4502584 -3,7319317 40,4502584 -3,7295811 40,449054 -3,7295811</posList>
             </LinearRing>
           </exterior>
         </Polygon>
