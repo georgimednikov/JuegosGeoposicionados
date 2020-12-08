@@ -104,6 +104,9 @@
     <actions>
       <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
         <documentation>Created with target conversation: ConversacionSoldadoMedicina</documentation>
+        <condition>
+          <active flag="SoldadoMedicinaVisitado" />
+        </condition>
         <effect>
           <trigger-conversation idTarget="ConversacionSoldadoMedicina" />
           <condition />
@@ -151,7 +154,47 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4438750132195, -3.72601479291963)" zoom="19" start="no">
+  <character id="SoldadoComunista" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/animation/AnimSoldadoComunista.eaa.xml" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: ConversacionSoldadoComunista</documentation>
+        <effect>
+          <trigger-conversation idTarget="ConversacionSoldadoComunista" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4430625816094, -3.72769385576294)" zoom="19" start="no">
     <map-element targetId="FacultadMedicina" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -201,23 +244,62 @@
     <map-element targetId="SoldadoMedicina" layer="0" scale="0.1194849" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.4422149658203, -3.72693490982056)</param>
+        <param name="Position">(40.4422073364258, -3.72698044776917)</param>
         <param name="Rotation">0</param>
         <param name="InteractionRange">25.34</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions>
+          <enter-action>
+            <condition>
+              <inactive flag="SoldadoMedicinaVisitado" />
+            </condition>
+            <effect>
+              <speak-char idTarget="SoldadoMedicina">¡Eh tú! ¿Pero qué haces allí al descubierto? ¿Es que quieres morir?</speak-char>
+              <condition />
+              <trigger-scene idTarget="EscenaSoldadoMedicina" x="640" y="540" transitionTime="1000" transitionType="5" />
+              <condition />
+              <trigger-conversation idTarget="ConversacionSoldadoMedicina" />
+              <condition />
+            </effect>
+            <only-from-outside>True</only-from-outside>
+          </enter-action>
+        </actions>
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="NinyoMedicina" layer="0" scale="0.1632376" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4440231323242, -3.72675514221191)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">True</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="SoldadoComunista" layer="0" scale="0.08613304" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4433059692383, -3.7275812625885)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
         <param name="RevealOnlyOnRange">True</param>
         <param name="Hint">False</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions />
       </ext-elem-ref>
     </map-element>
-    <map-element targetId="NinyoMedicina" layer="0" scale="0.2177" orientation="2">
+    <map-element targetId="Naranjero" layer="0" scale="0.03791257" orientation="2">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
-        <param name="Position">(40.4440231323242, -3.72673106193542)</param>
+        <param name="Position">(40.4430465698242, -3.728276014328)</param>
         <param name="Rotation">0</param>
-        <param name="InteractionRange">25</param>
+        <param name="InteractionRange">26.3</param>
         <param name="RevealOnlyOnRange">True</param>
-        <param name="Hint">True</param>
+        <param name="Hint">False</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
         <actions />
       </ext-elem-ref>
@@ -243,26 +325,13 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4421378691751 -3,72653782367682 40,4420398862446 -3,72748196125004 40,4424889738768 -3,72755706310247 40,4425828736072 -3,72661292552962</posList>
+              <posList>40,4421297039156 -3,726623654366 40,4420562167582 -3,72731029987381 40,4425134696384 -3,72737467289017 40,4425747082969 -3,7266987562184</posList>
             </LinearRing>
           </exterior>
         </Polygon>
       </geometry>
     </geometries>
-    <actions>
-      <enter-action>
-        <condition>
-          <inactive flag="SoldadoMedicinaVisitado" />
-        </condition>
-        <effect>
-          <speak-char idTarget="SoldadoMedicina">¡Eh tú! ¿Pero qué haces allí al descubierto? ¿Es que quieres morir?</speak-char>
-          <condition />
-          <trigger-scene idTarget="EscenaSoldadoMedicina" x="640" y="540" transitionTime="1000" transitionType="5" />
-          <condition />
-        </effect>
-        <only-from-outside>True</only-from-outside>
-      </enter-action>
-    </actions>
+    <actions />
   </geoelement>
   <geoelement id="EscuelaArquitectura">
     <description>
@@ -753,14 +822,14 @@
       </condition>
       <speak-player>
         <resources name="No name" />
-        <text>No pasa nada. ¿Por qué estás aquí?</text>
+        <text>No pasa nada. ¿Qué pasó aquí?</text>
       </speak-player>
       <condition>
         <inactive flag="SoldadoMedicinaVisitado" />
       </condition>
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Esta posición fue clave durante el frente madrileño. Tras cruzar el Manzanares en Noviembre del 36, los Sublevados tomaron varios edificios del campus, incluida la Escuela de Agronomos.</text>
+        <text>Tras cruzar el Manzanares en Noviembre del 36, los Sublevados tomaron varios edificios del campus, incluida la Escuela de Agronomos.</text>
       </speak-char>
       <condition>
         <inactive flag="SoldadoMedicinaVisitado" />
@@ -774,14 +843,7 @@
       </condition>
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Separados por poco más de 80 metros durante los 4 años que se mantuvo el frente. Ya te puedes imaginar el horror que tuvo lugar aquí.</text>
-      </speak-char>
-      <condition>
-        <inactive flag="SoldadoMedicinaVisitado" />
-      </condition>
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>Ambos bandos hicieron de las ruinas sus laberintos de trincheras y refugios. Ambos edificios tuvieron que ser totalmente reconstruidos tras la guerra. Menudo desastre...</text>
+        <text>Separados por poco más de 80 metros durante los 4 años que se mantuvo el frente... Ya te puedes imaginar el horror que tuvo lugar aquí.</text>
       </speak-char>
       <condition>
         <inactive flag="SoldadoMedicinaVisitado" />
@@ -795,7 +857,7 @@
       </condition>
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>¡Volviste! ¿Necesitas algo?</text>
+        <text>#! ¡¡HOLA!!</text>
       </speak-char>
       <condition>
         <active flag="SoldadoMedicinaVisitado" />
@@ -806,7 +868,7 @@
         <condition />
       </effect>
     </dialogue-node>
-    <option-node nodeindex="1" preListening="yes" editor-x="609" editor-y="66" x="609" y="66">
+    <option-node nodeindex="1" preListening="yes" editor-x="589" editor-y="60" x="589" y="60">
       <speak-player>
         <text>¿Por qué se mantuvo el frente de esta manera?</text>
         <resources name="No name" />
@@ -835,21 +897,24 @@
         <inactive flag="FotoAgronomosEnsenyada" />
       </condition>
       <child nodeindex="5" />
+      <speak-player>
+        <text>¿Y esta?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/PabellonFilosofia.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="6" />
     </option-node>
     <dialogue-node nodeindex="2" editor-x="1155" editor-y="0">
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Los sublevados no tenían los recursos necesarios para tomar Madrid.</text>
+        <text> Los sublevados no tenían los recursos necesarios para tomar Mardid. Aun así, lo intentaron.</text>
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Las tropas de Franco llegaron cansadas, pero de igual modo intentaron tomar la capital.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>Entre sus múltiples intentos, intentaron avanzar por la Ciudad Universitaria. </text>
+        <text> Entre sus múltiples intentos,  cruzaron el Manzanares y atacaron la Ciudad Universitaria. </text>
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoMedicina">
@@ -874,10 +939,10 @@
       <condition />
       <child nodeindex="1" />
     </dialogue-node>
-    <dialogue-node nodeindex="3" editor-x="1144" editor-y="378">
+    <dialogue-node nodeindex="3" editor-x="1137" editor-y="355">
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Al estallar la guerra, tomé las armas para defender Madrid contra los sublevados.</text>
+        <text>Me llamo Hugo Martinez. Al estallar la guerra, tomé las armas para defender Madrid contra los sublevados.</text>
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoMedicina">
@@ -905,7 +970,16 @@
         <text>Seguro que por aquí encuentras a mas personas que te contarán cosas interesantes sobre él.</text>
       </speak-char>
       <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Pero... No le preguntes a un tal Pedro... No tiene ni idea de lo que habla.</text>
+      </speak-char>
+      <condition />
       <child nodeindex="1" />
+      <effect>
+        <activate flag="DurrutiPresentado" />
+        <condition />
+      </effect>
     </dialogue-node>
     <dialogue-node nodeindex="4" editor-x="1150" editor-y="689">
       <speak-char idTarget="SoldadoMedicina">
@@ -925,7 +999,7 @@
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="860" editor-y="954">
+    <dialogue-node nodeindex="5" editor-x="459" editor-y="670">
       <speak-player>
         <resources name="No name" />
         <text>Mira, he encontrado esta foto en el diario de mi abuelo. ¿Te suena?</text>
@@ -940,7 +1014,7 @@
       <condition />
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
-        <text>Esta foto es de aquí mismo. Está sacada desde allí mismo, desde agrónomos.</text>
+        <text>¡Pero bueno! Está sacada desde aquí mismo, desde agrónomos, mirando hacia Odontología.</text>
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoMedicina">
@@ -960,7 +1034,7 @@
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>Eso he venido a averiguar. No sé náda sobre lo que hizo aquí.</text>
+        <text>No tengo ni idea...</text>
       </speak-player>
       <condition />
       <speak-char idTarget="SoldadoMedicina">
@@ -973,11 +1047,49 @@
         <text>¿Tienes alguna pregunta más?</text>
       </speak-char>
       <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Bien. Una foto menos que tengo que localizar.</text>
+      </speak-player>
+      <condition />
       <child nodeindex="1" />
       <effect>
         <activate flag="FotoAgronomosEnsenyada" />
         <condition />
       </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1101" editor-y="905">
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¡Pues claro! Aquí mismo estudié.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Sabes? Me vas a hacer un favor.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Oh no...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Llevo unos días buscando mi "Naranjero". Así llamábamos a el modelo de subfusil que usábamos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Ya te habrás dado cuenta que la memoria no es lo mío... Búscalo y te diré dónde sacaron esta fotografía.</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="QuestNaranjeroActivada" />
+          <condition />
+        </effect>
+      </end-conversation>
     </dialogue-node>
   </graph-conversation>
   <graph-conversation id="ConversacionNinyoMedicina">
@@ -1027,7 +1139,7 @@
       <condition />
       <child nodeindex="3" />
       <speak-player>
-        <text>No, gracias.</text>
+        <text>Debería irme.</text>
         <resources name="No name" />
       </speak-player>
       <condition />
@@ -1094,6 +1206,287 @@
         <resources name="No name" />
         <text>¡Nos vemos!</text>
       </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="ConversacionSoldadoComunista">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>¿Hola?</text>
+      </speak-player>
+      <condition>
+        <inactive flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¿Puedes verme? ¡Menuda sorpresa!</text>
+      </speak-char>
+      <condition>
+        <inactive flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¿Se puede saber qué se te ha perdido por aquí?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>Estoy buscando el lugar donde se tomaron unas fotografías de mi abuelo.</text>
+      </speak-player>
+      <condition>
+        <inactive flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¡Fascinante! ¿Podría verlas?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <speak-player>
+        <resources name="No name" />
+        <text>¡Volviste! ¿Necesitas algo?</text>
+      </speak-player>
+      <condition>
+        <active flag="SoldadoComunistaIntroducido" />
+      </condition>
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="SoldadoComunistaIntroducido" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="474" editor-y="85" x="474" y="85">
+      <speak-player>
+        <text>¿Cuál es tu historia?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿Te suena esta fotografía?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EscuelaArquitectura.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>Un anarquista me dijo que no te preguntara sobre Durruti.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="SoldadoComunistaPresentado" />
+        <active flag="DurrutiPresentado" />
+      </condition>
+      <child nodeindex="4" />
+      <speak-player>
+        <text>Debería irme.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="926" editor-y="3">
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Me llamo Perdo Gómez, y fuí militante en el Partido Comunista Español.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Al estallar la guerra, tomé las armas contra los fascistas para defender la capital de la república.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Nuestra relacion con los anarquistas y los liberales no era excelente, pero intentamos unirnos en la defensa de Madrid.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Yo participé en la defensa del hospital clínico, más hacia el este, y allí es donde fallecí.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Tras cruzar el Manzanares, los sublevados ocuparon prácticamente la mitad de Ciudad Universitaria. Incluído el Hospital Clínico.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Se lo conseguimos arrebatar brevemente, pero en cuestión de días lo retomaron de nuevo.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Intentamos sacarles de allí de cualquier manera. Intentamos derruir el edificio múltiples veces. Minas, granadas, bombas... Lo intentamos todo.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name">
+          <asset type="image" uri="assets/image/HospitalClinico.jpg" />
+        </resources>
+        <text>¡Mira en qué estado se quedó!</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="SoldadoComunistaPresentado" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1029" editor-y="360">
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Este edificio... No estoy seguro de cuál es exáctamente...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Estoy seguro que el edificio que tiene a su lado es la Casa de Velazquez.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Ese edificio fue defendido por unos compañeros polacos de las Brigadas Internacionales.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Deberías echar un vistazo por allí.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="941" editor-y="639">
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¡JA! ¿Es ese Hugo verdad?</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Mira, nuestra relacion con los anarquistas nunca ha sido buena.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Si, en un principio la CNT era mucho más popular que el PCE, y podía movilizar a más personas...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¡Pero hacían lo que les daba la gana! Si no fuera por nosotros, los comunistas, los soviéticos no nos hubieran ayudado.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Nunca sabremos lo que realmente le ocurrió a Durruti. Si me preguntas a mí, lo más seguro es que lo asesinara uno de los suyos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Igual fue uno de sus compañeros anarquistas, o un desertor, o un trotskysta.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>#! ¡Malditos trotskystas!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Disculpa, ya ves que la unidad no era lo nuestro...</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Eso explica bastantes cosas...</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="951" editor-y="974">
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>¡Suerte camarada!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name">
+          <asset type="image" uri="" />
+        </resources>
+        <text>Por cierto... ¿Alguna vez te has fijado en este monumento?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MonBrigadasInternacionalesPresentado" />
+      </condition>
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name">
+          <asset type="image" uri="assets/image/MonumentoBrigadasInternacionales.jpg" />
+        </resources>
+        <text>Conmemora a nuestros compañeros de las brigadas internacionales.</text>
+      </speak-char>
+      <condition>
+        <inactive flag="MonBrigadasInternacionalesPresentado" />
+      </condition>
+      <speak-char idTarget="SoldadoComunista">
+        <resources name="No name" />
+        <text>Bueno, no te quiero entretener más. ¡Que vaya bien!</text>
+      </speak-char>
+      <condition>
+        <active flag="MonBrigadasInternacionalesPresentado" />
+      </condition>
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="MonBrigadasInternacionalesPresentado" />
+        <condition />
+      </effect>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="EncuentroNaranjero">
+    <option-node nodeindex="0" preListening="yes" editor-x="79" editor-y="61" x="79" y="61">
+      <speak-player>
+        <text>¡Genial! Esto debe ser el naranjero.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <active flag="QuestNaranjeroActivada" />
+      </condition>
+      <child nodeindex="1" />
+      <speak-player>
+        <text>Pero... ¿Quién deja esto al aire libre? La dejaré aquí...</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="QuestNaranjeroActivada" />
+      </condition>
+      <child nodeindex="2" />
+    </option-node>
+    <dialogue-node nodeindex="1" editor-x="767" editor-y="61">
+      <speak-player>
+        <resources name="No name" />
+        <text>Debería volver con Pedro.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <generate-object idTarget="Naranjero" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="2" editor-x="767" editor-y="252">
+      <speak-player>
+        <resources name="No name" />
+        <text>
+        </text>
+      </speak-player>
       <condition />
       <end-conversation />
     </dialogue-node>
@@ -1261,6 +1654,28 @@
         </condition>
         <effect>
           <trigger-scene idTarget="FotoFacultadMedicina" x="490" y="499" transitionTime="500" transitionType="5" />
+          <condition />
+        </effect>
+      </examine>
+    </actions>
+  </object>
+  <object id="Naranjero" returnsWhenDragged="yes" behaviour="normal" resources-transition-time="0">
+    <resources name="No name">
+      <asset type="image" uri="assets/image/Naranjero.jpg" />
+      <asset type="icon" uri="assets/icon/Naranjero.jpg" />
+    </resources>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <actions>
+      <examine needsGoTo="no" keepDistance="0" not-effects="no">
+        <effect>
+          <trigger-conversation idTarget="EncuentroNaranjero" />
           <condition />
         </effect>
       </examine>
