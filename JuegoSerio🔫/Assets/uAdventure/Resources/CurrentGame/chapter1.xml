@@ -109,6 +109,58 @@
         </condition>
         <effect>
           <trigger-conversation idTarget="ConversacionSoldadoMedicina" />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="RiosCapape" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/UpCapape.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Arquitectura</documentation>
+        <condition>
+          <inactive flag="FinCapape" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Arquitectura" />
+          <condition />
+        </effect>
+      </talk-to>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Arquitectura_Fin</documentation>
+        <condition>
+          <active flag="FinCapape" />
+        </condition>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Arquitectura_Fin" />
           <condition />
         </effect>
       </talk-to>
@@ -154,6 +206,46 @@
       </talk-to>
     </actions>
   </character>
+  <character id="Polono_Velazquez" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/animation/Polono.eaa.xml" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Conversacion_Velazquez</documentation>
+        <effect>
+          <trigger-conversation idTarget="Conversacion_Velazquez" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
   <character id="SoldadoComunista" behaviour="normal">
     <resources name="No name">
       <asset type="standup" uri="assets/special/EmptyAnimation" />
@@ -189,6 +281,47 @@
         <documentation>Created with target conversation: ConversacionSoldadoComunista</documentation>
         <effect>
           <trigger-conversation idTarget="ConversacionSoldadoComunista" />
+          <condition />
+        </effect>
+      </talk-to>
+    </actions>
+  </character>
+  <character id="Soldado_Perdido" behaviour="normal">
+    <resources name="No name">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#000000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+    <actions>
+      <talk-to needsGoTo="yes" keepDistance="35" not-effects="no">
+        <documentation>Created with target conversation: Soldado_Perdido_Conversacion</documentation>
+        <effect>
+          <trigger-conversation idTarget="Soldado_Perdido_Conversacion" />
           <condition />
         </effect>
       </talk-to>
@@ -268,6 +401,27 @@
         </actions>
       </ext-elem-ref>
     </map-element>
+    
+    <map-element targetId="RiosCapape" layer="0" scale="0.3805234" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.440013885498, -3.73116993904114)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">100</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions>
+          <enter-action>
+            <effect>
+              <trigger-conversation idTarget="Conversacion_Arquitectura" />
+              <condition />
+            </effect>
+            <only-from-outside>True</only-from-outside>
+          </enter-action>
+        </actions>
+      </ext-elem-ref>
+    </map-element>
     <map-element targetId="NinyoMedicina" layer="0" scale="0.1632376" orientation="2">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -292,12 +446,37 @@
         <actions />
       </ext-elem-ref>
     </map-element>
+    
+    <map-element targetId="Polono_Velazquez" layer="0" scale="0.5186755" orientation="0">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4412612915039, -3.73042154312134)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">69.9</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
     <map-element targetId="Naranjero" layer="0" scale="0.03791257" orientation="2">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
         <param name="Position">(40.4430465698242, -3.728276014328)</param>
         <param name="Rotation">0</param>
         <param name="InteractionRange">26.3</param>
+        <param name="RevealOnlyOnRange">True</param>
+        <param name="Hint">False</param>
+        <param name="RevealParticleTexture">leaf_particle.png</param>
+        <actions />
+      </ext-elem-ref>
+    </map-element>
+    <map-element targetId="Soldado_Perdido" layer="0" scale="1" orientation="2">
+      <condition />
+      <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
+        <param name="Position">(40.4421348571777, -3.72924137115479)</param>
+        <param name="Rotation">0</param>
+        <param name="InteractionRange">25</param>
         <param name="RevealOnlyOnRange">True</param>
         <param name="Hint">False</param>
         <param name="RevealParticleTexture">leaf_particle.png</param>
@@ -347,7 +526,7 @@
         <Polygon>
           <exterior>
             <LinearRing>
-              <posList>40,4405250231203 -3,73069932111019 40,4408623579721 -3,7305769453239 40,4410705768391 -3,73181076147073 40,440645972976 -3,73199315168377 40,4397171426757 -3,73203338481897 40,4396069070189 -3,73086394168847 40,4395701617598 -3,73040796615594 40,4399621101547 -3,73037577964775</posList>
+              <posList>40,440574016062 -3,73075296523877 40,4409235988455 -3,73109192940302 40,4410664940722 -3,73182149030681 40,4406418902091 -3,73200388051985 40,4397130599088 -3,73204411365505 40,4395824102695 -3,73042405935832 40,4399171996048 -3,73039455505916 40,4399580273339 -3,73082102629253</posList>
             </LinearRing>
           </exterior>
         </Polygon>
@@ -905,7 +1084,6 @@
       </speak-player>
       <condition />
       <child nodeindex="6" />
-    </option-node>
     <dialogue-node nodeindex="2" editor-x="1155" editor-y="0">
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
@@ -975,118 +1153,137 @@
         <text>Pero... No le preguntes a un tal Pedro... No tiene ni idea de lo que habla.</text>
       </speak-char>
       <condition />
-      <child nodeindex="1" />
-      <effect>
-        <activate flag="DurrutiPresentado" />
-        <condition />
-      </effect>
-    </dialogue-node>
-    <dialogue-node nodeindex="4" editor-x="1150" editor-y="689">
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>Entendido, estaré por aquí si me buscas.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>Intentaré no gritarte la próxima vez.</text>
-      </speak-char>
-      <condition />
       <end-conversation>
         <effect>
-          <trigger-scene idTarget="MapaJugable" x="539" y="455" transitionTime="1000" transitionType="5" />
+          <activate flag="QuestNaranjeroActivada" />
           <condition />
         </effect>
       </end-conversation>
     </dialogue-node>
-    <dialogue-node nodeindex="5" editor-x="459" editor-y="670">
-      <speak-player>
+  </graph-conversation>
+  
+  <graph-conversation id="Conversacion_Arquitectura">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>Mira, he encontrado esta foto en el diario de mi abuelo. ¿Te suena?</text>
-      </speak-player>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name">
-          <asset type="image" uri="" />
-        </resources>
-        <text>¡Anda! Justo como lo recordada.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>¡Pero bueno! Está sacada desde aquí mismo, desde agrónomos, mirando hacia Odontología.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>¿Oye, esta foto la sacó tu abuelo?</text>
+        <text>¡Alto!, ¿quién te envía?</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>No lo sé...</text>
+        <text>¿Usted es...?</text>
       </speak-player>
       <condition />
-      <speak-char idTarget="SoldadoMedicina">
+      <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>Pues la tomó desde el lado sublevado... ¡¿No será un franquista?!</text>
+        <text>Rios Capapé, y esto es el puesto de mando de la escuela de Arquitectura.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Ahora, ¿qué ocurre?, ¿otra vez han atacado la pasarela de la muerte o estas aqui para relevar a los soldados?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" keepShowing="yes" preListening="yes" editor-x="562" editor-y="125" x="562" y="125">
+      <speak-player>
+        <text>¿Pasarela de la Muerte?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>La guerra ya acabó.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition>
+        <inactive flag="MuertoCapape" />
+      </condition>
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="1027" editor-y="101">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>La pasarela que nos une con el Puente de los Franceses, la usamos para aprovisionarnos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Pero basta de chachara. Ve a la biblioteca y trae libros, después si quieres te puedes ir al hogar del combatiente a descansar.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="671" editor-y="578">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>¿Qué?, ¿Cuándo?, ¿Hemos ganado?</text>
       </speak-char>
       <condition />
       <speak-player>
         <resources name="No name" />
-        <text>No tengo ni idea...</text>
+        <text>Mas o menos, la cosa es que usted está muerto.</text>
       </speak-player>
       <condition />
-      <speak-char idTarget="SoldadoMedicina">
+      <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>Bueno, espero que lo consigas averiguar. ¡Mucha suerte!</text>
+        <text>Entiendo, eso explica un par de cosas.</text>
       </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>¿Tienes alguna pregunta más?</text>
-      </speak-char>
-      <condition />
-      <speak-player>
-        <resources name="No name" />
-        <text>#O Bien. Una foto menos que tengo que localizar.</text>
-      </speak-player>
       <condition />
       <child nodeindex="1" />
       <effect>
-        <activate flag="FotoAgronomosEnsenyada" />
+        <activate flag="MuertoCapape" />
         <condition />
       </effect>
     </dialogue-node>
-    <dialogue-node nodeindex="6" editor-x="1101" editor-y="905">
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>¡Pues claro! Aquí mismo estudié.</text>
-      </speak-char>
-      <condition />
-      <speak-char idTarget="SoldadoMedicina">
-        <resources name="No name" />
-        <text>¿Sabes? Me vas a hacer un favor.</text>
-      </speak-char>
-      <condition />
+    <option-node nodeindex="4" preListening="yes" editor-x="1777" editor-y="334" x="1777" y="334">
       <speak-player>
+        <text>¿Libros?</text>
         <resources name="No name" />
-        <text>#O Oh no...</text>
       </speak-player>
       <condition />
-      <speak-char idTarget="SoldadoMedicina">
+      <child nodeindex="5" />
+      <speak-player>
+        <text>¿Hogar del combatiente?</text>
         <resources name="No name" />
-        <text>Llevo unos días buscando mi "Naranjero". Así llamábamos a el modelo de subfusil que usábamos.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="6" />
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EscuelaArquitectura.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="7" />
+    </option-node>
+    <dialogue-node nodeindex="5" editor-x="1940" editor-y="25">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Si, los usamos para las barricadas. Una pena que se echen a perder, pero la situacion lo requiere.</text>
       </speak-char>
       <condition />
-      <speak-char idTarget="SoldadoMedicina">
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="2140" editor-y="322">
+      <speak-char idTarget="RiosCapape">
         <resources name="No name" />
-        <text>Ya te habrás dado cuenta que la memoria no es lo mío... Búscalo y te diré dónde sacaron esta fotografía.</text>
+        <text>Si, el bar que tenemos aqui. Los soldados en relevos descansan ahi.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="4" />
+    </dialogue-node>
+    <dialogue-node nodeindex="7" editor-x="1955" editor-y="803">
+      <speak-char idTarget="RiosCapape">
+        <resources name="No name" />
+        <text>Claro, si es este lugar, mira, ahi abajo a la derecha se ve la pasarela de la muerte y todo.</text>
       </speak-char>
       <condition />
       <end-conversation>
         <effect>
-          <activate flag="QuestNaranjeroActivada" />
+          <activate flag="FinCapape" />
           <condition />
         </effect>
       </end-conversation>
@@ -1298,15 +1495,10 @@
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoComunista">
-        <resources name="No name" />
         <text>Al estallar la guerra, tomé las armas contra los fascistas para defender la capital de la república.</text>
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoComunista">
-        <resources name="No name" />
-        <text>Nuestra relacion con los anarquistas y los liberales no era excelente, pero intentamos unirnos en la defensa de Madrid.</text>
-      </speak-char>
-      <condition />
       <speak-char idTarget="SoldadoComunista">
         <resources name="No name" />
         <text>Yo participé en la defensa del hospital clínico, más hacia el este, y allí es donde fallecí.</text>
@@ -1486,6 +1678,238 @@
         <resources name="No name" />
         <text>
         </text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  
+  <graph-conversation id="Conversacion_Arquitectura_Fin">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Ahora mismo estoy ocupado.</text>
+      </speak-player>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Conversacion_Velazquez">
+    <dialogue-node nodeindex="0" editor-x="13358" editor-y="89">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola, ¿puedes ayudarme?</text>
+      </speak-player>
+      <condition>
+        <inactive flag="Fin_Polono" />
+      </condition>
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Cześć, ¿qué haces por aqui?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="Fin_Polono" />
+      </condition>
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>No suelo tener la oportunidad de hablar con gente viva, por aquí solo quedan chiflados.</text>
+      </speak-char>
+      <condition>
+        <inactive flag="Fin_Polono" />
+      </condition>
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Entonces, ¿quieres algo?</text>
+      </speak-char>
+      <condition>
+        <inactive flag="Fin_Polono" />
+      </condition>
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="15046" editor-y="92" x="15046" y="92">
+      <speak-player>
+        <text>¿Qué pasó aquí?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿Quién eres?</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EstatuaVelazquez.png" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+      <speak-player>
+        <text>No necesito nada.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="5" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="16867" editor-y="225">
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Esto de aqui es la Casa de Velazquez.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Cuando los sublevados cruzaron el Manzanares en noviembre del 36, primero tomaron este edificio y después siguieron con su avance.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>La batalla fue horrible, no los conseguimos parar... </text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Durante la guerra este edificio fue completamente destrozado. Poco después de ser tomada, sufrió un incendio que la dejó destorzada.</text>
+      </speak-char>
+      <condition />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="16872" editor-y="491">
+        <resources name="No name" />
+        <text>Soy Kacper Kowalski, vine desde Polonia en defensa de la república como brigadista al comienzo de la guerra.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Forme parte del Batallón Dabrowski. Nos establecimos en esta posición dos dias antes del ataque de los sublevados.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Defendimos esta posición hasta nuestro último aliento.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Dos tercios de nuestros compañeros cayeron. Despúes de cinco horas de combate, solo quedaban en pie seis hombres entre los cuales me encontraba.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Yo cai en combate y terminamos perdiendo la posición.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="16874" editor-y="749">
+      <speak-player>
+        <resources name="No name" />
+        <text>Me la encontre en el diario de mi abuelo. Participó en la guerra.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>A ver...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Anda si es el caballo de la Casa de Velzaquez. Lleva aqui mucho tiempo. Milagrosamente consiguio sobrevivir a la guerra, aun que acabó un poco torcida.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>Menuda tristeza ver el sitio de esta manera. ¿Sabes?, aquello que se ve al fondo es la escuela de Arquitectura.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="Polono_Velazquez">
+        <resources name="No name" />
+        <text>También la mantuvieron los franquistas durante toda la guerra. Ve a echar un vistazo, seguro que te necuentras algún charlatán.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Perfecto, ya me queda una foto menos.</text>
+      </speak-player>
+      <condition>
+        <inactive flag="Foto_Polono" />
+      </condition>
+      <child nodeindex="1" />
+      <effect>
+        <consume-object idTarget="ImagenEstatuaVelazquez" />
+        <condition />
+        <activate flag="Foto_Polono" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="17895" editor-y="2036">
+      <speak-player>
+        <resources name="No name" />
+        <text>Do Widzenia, espero volver a vernos.</text>
+      </speak-player>
+      <condition />
+      <end-conversation>
+        <effect>
+          <activate flag="Fin_Polono" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+  </graph-conversation>
+  <graph-conversation id="Soldado_Perdido_Conversacion">
+    <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hola</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="Soldado_Perdido">
+        <resources name="No name" />
+        <text>Hola, ¿necesitas ayuda?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" editor-x="1059" editor-y="51" x="1059" y="51">
+      <speak-player>
+        <text>¿Sabes que es esto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/PabellonFilosofia.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>Estoy bien, gracias.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="1484" editor-y="139">
+      <speak-char idTarget="Soldado_Perdido">
+        <resources name="No name" />
+        <text>Por supuesto, es lo que nos ordenaron atacar. </text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Yo no conseguí llegar a Filosofía, pero creo que el resto si.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="1433" editor-y="716">
+      <speak-player>
+        <resources name="No name" />
+        <text>Hasta luego entonces.</text>
       </speak-player>
       <condition />
       <end-conversation />
