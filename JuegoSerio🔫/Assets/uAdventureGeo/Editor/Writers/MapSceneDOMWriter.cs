@@ -24,7 +24,7 @@ namespace uAdventure.Geo
             element.SetAttribute("renderStyle", mapScene.RenderStyle.ToString());
             element.SetAttribute("tileMetaIdentifier", mapScene.TileMetaIdentifier);
             element.SetAttribute("usesGameplayArea", mapScene.UsesGameplayArea ? "yes" : "no");
-            element.SetAttribute("gameplayArea", mapScene.GameplayArea.ToString());
+            element.SetAttribute("gameplayArea", RectDToString(mapScene.GameplayArea));
             element.SetAttribute("center", ToStringWithCulture(mapScene.LatLon, CultureInfo.InvariantCulture));
             element.SetAttribute("zoom", mapScene.Zoom.ToString());
 
@@ -39,10 +39,15 @@ namespace uAdventure.Geo
 
             foreach (var mapElement in mapScene.Elements)
             {
-                DumpMapElement(node, mapElement, options);   
+                DumpMapElement(node, mapElement, options);
             }
         }
 
+        private static string RectDToString(RectD rectD)
+        {
+            var culture = CultureInfo.CreateSpecificCulture("es-ES");
+            return rectD.Min.x.ToString(culture) + " " + rectD.Min.y.ToString(culture) + " " + rectD.Size.x.ToString(culture) + " " + rectD.Size.y.ToString(culture);
+        }
 
         protected void DumpMapElement(XmlNode node, MapElement mapElement, params IDOMWriterParam[] options)
         {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Xml;
 using uAdventure.Core;
 using UnityEngine;
@@ -47,7 +48,7 @@ namespace uAdventure.Geo
             var points = new List<Vector2d>();
             for (int i = 0; i < zippedPoints.Length; i += 2) 
             {
-                points.Add(new Vector2d(double.Parse(zippedPoints[i]), double.Parse(zippedPoints[i + 1])));
+                points.Add(new Vector2d(double.Parse(zippedPoints[i], CultureInfo.CreateSpecificCulture("es-ES")), double.Parse(zippedPoints[i + 1], CultureInfo.CreateSpecificCulture("es-ES"))));
             }
 
             return points.ToArray();

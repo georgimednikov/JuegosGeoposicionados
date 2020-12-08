@@ -5,6 +5,7 @@ using System;
 using System.Xml;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 
 namespace uAdventure.Editor
 {
@@ -75,7 +76,7 @@ namespace uAdventure.Editor
             var elem = doc.CreateElement(points.Length > 1 ? "gml:posList" : "gml:pos");
             parent.AppendChild(elem);
 
-            elem.InnerText = String.Join(" ", points.Select(p => p.x + " " + p.y).ToArray());
+            elem.InnerText = String.Join(" ", points.Select(p => p.x.ToString(CultureInfo.CreateSpecificCulture("es-ES")) + " " + p.y.ToString(CultureInfo.CreateSpecificCulture("es-ES"))).ToArray());
         }
 
         protected override string GetElementNameFor(object target)

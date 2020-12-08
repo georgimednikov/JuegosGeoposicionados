@@ -191,7 +191,7 @@
       </talk-to>
     </actions>
   </character>
-  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4407089240549, -3.73015612363872)" zoom="17" start="no">
+  <map-scene id="MapaJugable" cameraType="Aerial2D" renderStyle="Tile" tileMetaIdentifier="OSMTile" usesGameplayArea="yes" gameplayArea="40,4364545764484 -3,74027609825133 0,0185015955099104 0,0219297409057417" center="(40.4399250336882, -3.73015612363872)" zoom="14" start="no">
     <map-element targetId="PuntoInteres" layer="0" scale="1" orientation="2">
       <condition />
     </map-element>
@@ -354,10 +354,9 @@
     </description>
     <geometries>
       <geometry influence="0">
-        <Point>
-          <pos>
-          </pos>
-        </Point>
+        <LineString>
+          <posList>25,0855988970648 -8,525390625 16,8624861140258 -6,591796875</posList>
+        </LineString>
       </geometry>
     </geometries>
     <actions />

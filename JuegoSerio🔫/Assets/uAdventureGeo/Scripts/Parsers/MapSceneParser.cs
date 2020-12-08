@@ -22,7 +22,7 @@ namespace uAdventure.Geo
             mapScene.RenderStyle = ExParsers.ParseEnum<RenderStyle>(ExString.Default(element.GetAttribute("renderStyle"), RenderStyle.Tile.ToString()));
             mapScene.TileMetaIdentifier = ExString.Default(element.GetAttribute("tileMetaIdentifier"), "OSMTile");
             mapScene.UsesGameplayArea = ExString.EqualsDefault(element.GetAttribute("usesGameplayArea"), "yes", false);
-            mapScene.GameplayArea = ExParsers.ParseDefault(element.GetAttribute("gameplayArea"), new RectD(Vector2d.zero, Vector2d.zero));
+            mapScene.GameplayArea = (RectD) parseParam(typeof(RectD), element.GetAttribute("gameplayArea"));
             mapScene.LatLon = (Vector2d) parseParam(typeof(Vector2d), element.GetAttribute("center"));
             mapScene.Zoom = ExParsers.ParseDefault(element.GetAttribute("zoom"), 19);
 
@@ -136,6 +136,22 @@ namespace uAdventure.Geo
                     var numbers = cyphers.Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
                     return new Vector3d(numbers[0], numbers[1], numbers[2]);
                 }
+            }
+            else if(paramType == typeof(RectD))
+            {
+                string[] zippedPoints = string.IsNullOrEmpty(innerText) ? null : innerText.Split(' ');
+                if (zippedPoints == null || zippedPoints.Length < 2)
+                {
+                    return new Vector2d[0];
+                }
+
+                var points = new List<Vector2d>();
+                for (int i = 0; i < zippedPoints.Length; i += 2)
+                {
+                    points.Add(new Vector2d(double.Parse(zippedPoints[i], CultureInfo.CreateSpecificCulture("es-ES")), double.Parse(zippedPoints[i + 1], CultureInfo.CreateSpecificCulture("es-ES"))));
+                }
+
+                return new RectD(points[0], points[1]);
             }
             
 
