@@ -290,7 +290,6 @@
     <resources name="No name">
       <asset type="standup" uri="assets/special/EmptyAnimation" />
       <asset type="standdown" uri="assets/special/EmptyAnimation" />
-
       <asset type="standright" uri="assets/special/EmptyAnimation" />
       <asset type="standleft" uri="assets/special/EmptyAnimation" />
       <asset type="speakup" uri="assets/special/EmptyAnimation" />
@@ -401,7 +400,6 @@
         </actions>
       </ext-elem-ref>
     </map-element>
-    
     <map-element targetId="RiosCapape" layer="0" scale="0.3805234" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -446,7 +444,6 @@
         <actions />
       </ext-elem-ref>
     </map-element>
-    
     <map-element targetId="Polono_Velazquez" layer="0" scale="0.5186755" orientation="0">
       <condition />
       <ext-elem-ref transformManager="uAdventure.Geo.GeopositionedDescriptor">
@@ -1084,6 +1081,7 @@
       </speak-player>
       <condition />
       <child nodeindex="6" />
+    </option-node>
     <dialogue-node nodeindex="2" editor-x="1155" editor-y="0">
       <speak-char idTarget="SoldadoMedicina">
         <resources name="No name" />
@@ -1153,6 +1151,115 @@
         <text>Pero... No le preguntes a un tal Pedro... No tiene ni idea de lo que habla.</text>
       </speak-char>
       <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="DurrutiPresentado" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="1150" editor-y="689">
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Entendido, estaré por aquí si me buscas.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Intentaré no gritarte la próxima vez.</text>
+      </speak-char>
+      <condition />
+      <end-conversation>
+        <effect>
+          <trigger-scene idTarget="MapaJugable" x="539" y="455" transitionTime="1000" transitionType="5" />
+          <condition />
+        </effect>
+      </end-conversation>
+    </dialogue-node>
+    <dialogue-node nodeindex="5" editor-x="459" editor-y="670">
+      <speak-player>
+        <resources name="No name" />
+        <text>Mira, he encontrado esta foto en el diario de mi abuelo. ¿Te suena?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name">
+          <asset type="image" uri="" />
+        </resources>
+        <text>¡Anda! Justo como lo recordada.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¡Pero bueno! Está sacada desde aquí mismo, desde agrónomos, mirando hacia Odontología.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Oye, esta foto la sacó tu abuelo?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No lo sé...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Pues la tomó desde el lado sublevado... ¡¿No será un franquista?!</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>No tengo ni idea...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Bueno, espero que lo consigas averiguar. ¡Mucha suerte!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Tienes alguna pregunta más?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Bien. Una foto menos que tengo que localizar.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+      <effect>
+        <activate flag="FotoAgronomosEnsenyada" />
+        <condition />
+      </effect>
+    </dialogue-node>
+    <dialogue-node nodeindex="6" editor-x="1101" editor-y="905">
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¡Pues claro! Aquí mismo estudié.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>¿Sabes? Me vas a hacer un favor.</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Oh no...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Llevo unos días buscando mi "Naranjero". Así llamábamos a el modelo de subfusil que usábamos.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="SoldadoMedicina">
+        <resources name="No name" />
+        <text>Ya te habrás dado cuenta que la memoria no es lo mío... Búscalo y te diré dónde sacaron esta fotografía.</text>
+      </speak-char>
+      <condition />
       <end-conversation>
         <effect>
           <activate flag="QuestNaranjeroActivada" />
@@ -1161,7 +1268,124 @@
       </end-conversation>
     </dialogue-node>
   </graph-conversation>
-  
+  <graph-conversation id="ConversacionNinyoMedicina">
+    <dialogue-node nodeindex="0" editor-x="59" editor-y="53">
+      <speak-player>
+        <resources name="No name" />
+        <text>Disculpa. ¿Tienes un momento?</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Anda! ¿Estás vivo?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Pues si...</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Curioso... Rompes la monotonía. Aquí todo el mundo está chiflado.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¿Necesitas algo?</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <option-node nodeindex="1" preListening="yes" editor-x="643" editor-y="62" x="643" y="62">
+      <speak-player>
+        <text>¿Te suena esta foto?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/EstatuaVelazquez.png" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="2" />
+      <speak-player>
+        <text>¿Y esta?</text>
+        <resources name="No name">
+          <asset type="image" uri="assets/image/PabellonFilosofia.jpg" />
+        </resources>
+      </speak-player>
+      <condition />
+      <child nodeindex="3" />
+      <speak-player>
+        <text>Debería irme.</text>
+        <resources name="No name" />
+      </speak-player>
+      <condition />
+      <child nodeindex="4" />
+    </option-node>
+    <dialogue-node nodeindex="2" editor-x="980" editor-y="14">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Si claro, estamos aquí mism... Oh espera...</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>Que va, la estatua de la foto no es la de esta plaza.</text>
+      </speak-player>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>No recuerdo exáctamente el nombre del edificio...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¿Hogar Goya... Villa Picasso... Casa...?</text>
+      </speak-char>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Supongo que será algo de un pintor...</text>
+      </speak-player>
+      <condition />
+      <speak-player>
+        <resources name="No name" />
+        <text>#O Debería mirar el mapa, seguro que encuentro algo.</text>
+      </speak-player>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="3" editor-x="974" editor-y="358">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>A ver a ver...</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Madre mia, menudo destrozo!</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Esto saca pinta de ser un pabellón de una facultad.</text>
+      </speak-char>
+      <condition />
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>Lo siento, no puedo decirte nada más sobre el tema.</text>
+      </speak-char>
+      <condition />
+      <child nodeindex="1" />
+    </dialogue-node>
+    <dialogue-node nodeindex="4" editor-x="960" editor-y="621">
+      <speak-char idTarget="NinyoMedicina">
+        <resources name="No name" />
+        <text>¡Nos vemos!</text>
+      </speak-char>
+      <condition />
+      <end-conversation />
+    </dialogue-node>
+  </graph-conversation>
   <graph-conversation id="Conversacion_Arquitectura">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-char idTarget="RiosCapape">
@@ -1499,7 +1723,6 @@
       </speak-char>
       <condition />
       <speak-char idTarget="SoldadoComunista">
-      <speak-char idTarget="SoldadoComunista">
         <resources name="No name" />
         <text>Yo participé en la defensa del hospital clínico, más hacia el este, y allí es donde fallecí.</text>
       </speak-char>
@@ -1683,7 +1906,6 @@
       <end-conversation />
     </dialogue-node>
   </graph-conversation>
-  
   <graph-conversation id="Conversacion_Arquitectura_Fin">
     <dialogue-node nodeindex="0" editor-x="50" editor-y="50">
       <speak-player>
@@ -1693,7 +1915,7 @@
       <condition />
       <end-conversation />
     </dialogue-node>
-  </graph-conversation>
+  </graph-conversation> 
   <graph-conversation id="Conversacion_Velazquez">
     <dialogue-node nodeindex="0" editor-x="13358" editor-y="89">
       <speak-player>
@@ -1777,6 +1999,7 @@
       <condition />
     </dialogue-node>
     <dialogue-node nodeindex="3" editor-x="16872" editor-y="491">
+      <speak-char idTarget="Polono_Velazquez">
         <resources name="No name" />
         <text>Soy Kacper Kowalski, vine desde Polonia en defensa de la república como brigadista al comienzo de la guerra.</text>
       </speak-char>
